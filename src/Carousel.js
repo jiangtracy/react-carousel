@@ -5,13 +5,14 @@ import image2 from "./image2.jpg";
 import image3 from "./image3.jpg";
 import Card from "./Card";
 
+/* docstring  */
 function Carousel(props) {
   const [cardIdx, setCardIdx] = useState(0);
   const card = props.cardData[cardIdx];
   const total = props.cardData.length;
   const goForward = () => setCardIdx(cardIdx + 1);
   const goBackward = () => setCardIdx(cardIdx - 1);
-
+  // make a variable of the conditions, add CSS class hide. 
   return (
     <div className="Carousel">
       <h1>{props.title}</h1>

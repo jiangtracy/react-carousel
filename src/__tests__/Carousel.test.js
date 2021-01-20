@@ -38,10 +38,11 @@ it("works when you click on the left arrow", function() {
   // move forward in the carousel
   const rightArrow = queryByTestId("right-arrow");
   fireEvent.click(rightArrow);
+  // use css class
   const leftArrow = queryByTestId("left-arrow");
   fireEvent.click(leftArrow);
 
-  // expect the second image to show, but not the first
+  // expect the first image to show, but not the second
   expect(queryByAltText("Photo by Richard Pasquarella on Unsplash")).toBeInTheDocument();
   expect(queryByAltText("Photo by Pratik Patel on Unsplash")).not.toBeInTheDocument();
 });
@@ -62,6 +63,7 @@ it("arrows are missing when you are on the first or last image", function() {
   expect(queryByTestId("left-arrow")).toBeInTheDocument();
   
   // expect right arrow missing, left arrow stil here
+  // to have class
   fireEvent.click(rightArrow);
   expect(queryByTestId("right-arrow")).not.toBeInTheDocument();
   expect(queryByTestId("left-arrow")).toBeInTheDocument();

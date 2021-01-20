@@ -12,6 +12,7 @@ it("matches snapshot", function() {
   expect(container).toMatchSnapshot();
 });
 
+// not essential
 it("renders properly", function() {
   const {container, debug} = render(<Card />);
   debug(container);
@@ -21,6 +22,7 @@ it("renders properly", function() {
   expect(container.querySelector(".Card-small")).toContainHTML("Image 1 of 1")
 })
 
+// make object and spread it 
 Card.defaultProps = 
     {
       src: image1,
